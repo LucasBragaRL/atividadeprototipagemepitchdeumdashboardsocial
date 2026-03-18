@@ -1,19 +1,19 @@
 # Dashboard Social - Startup 
 
-[cite_start]Projeto de prototipagem para centralizar postagens e perfis usando a API JSONPlaceholder[cite: 10, 12].
+Projeto de prototipagem para centralizar postagens e perfis usando a API JSONPlaceholder.
 
 ## Arquitetura (MVC)
-[cite_start]O sistema segue o padrão Model-View-Controller para separar a lógica de dados da interface[cite: 27].
-- [cite_start]**Model**: Gerencia as requisições HTTP[cite: 27].
-- [cite_start]**View**: Interface de usuário no terminal[cite: 27].
-- [cite_start]**Controller**: Faz a ponte entre os dados e a tela[cite: 27].
+O sistema segue o padrão Model-View-Controller para separar a lógica de dados da interface.
+- **Model**: Gerencia as requisições HTTP e a conexão com o servidor.
+- **View**: Interface de usuário que roda diretamente no terminal.
+- **Controller**: Faz a ponte entre o modelo de dados e a visualização na tela.
 
 ## Modelagem e Classes
-- [cite_start]**Usuário**: id, nome, email[cite: 22, 23].
-- [cite_start]**Postagem**: id, id_usuario, título, corpo[cite: 22, 23].
-- [cite_start]**Associação**: Um Usuário possui várias Postagens (1:N)[cite: 24].
+- **Usuário**: atributos id, nome e email.
+- **Postagem**: atributos id, id_usuario, título e corpo.
+- **Associação**: Um Usuário possui várias Postagens (Relação 1:N).
 
 ## Resiliência e Falhas
-Para evitar travamentos, implementamos:
-- [cite_start]**Timeouts**: Limite de 5 segundos para resposta da API[cite: 30].
-- [cite_start]**Try/Catch**: Tratamento de erros de rede e códigos HTTP (ex: 404)[cite: 30].
+Para evitar travamentos e garantir a estabilidade do protótipo, implementamos:
+- **Timeouts**: Definido um limite de 5 segundos para resposta da API.
+- **Try/Catch**: Tratamento de exceções para erros de rede e códigos de erro HTTP (ex: 404).
